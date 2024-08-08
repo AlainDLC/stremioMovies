@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Box from "./Box";
+import StarRating from "./StarrRating";
 
 export default function ListBox({ tempMovieData }) {
   const [movies, setMovies] = useState(tempMovieData);
