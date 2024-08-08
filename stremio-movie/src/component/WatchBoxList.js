@@ -1,29 +1,18 @@
-import { useState } from "react";
 import Summary from "./Summary";
+import Box from "./Box";
 
 export default function WatchBoxList({ tempWatchedData }) {
-  const [watched, setWatched] = useState(tempWatchedData);
-  const [isOpen2, setIsOpen2] = useState(true);
+  const watched = tempWatchedData;
 
   return (
-    <div className="box">
-      <button
-        className="btn-toggle"
-        onClick={() => setIsOpen2((open) => !open)}
-      >
-        {isOpen2 ? "🔼" : "🔽"}
-      </button>
-      {isOpen2 && (
-        <>
-          <Summary watched={watched} />
-          <ul className="list">
-            {watched.map((movie) => (
-              <WatchList movie={movie} key={movie.imdbID} />
-            ))}
-          </ul>
-        </>
-      )}
-    </div>
+    <Box>
+      <Summary watched={watched} />
+      <ul className="list">
+        {watched.map((movie) => (
+          <WatchList movie={movie} key={movie.imdbID} />
+        ))}
+      </ul>
+    </Box>
   );
 }
 

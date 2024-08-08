@@ -4,6 +4,7 @@ import SearcBar from "./component/SearchBar";
 import NumResult from "./component/NumResult";
 import ListBox from "./component/ListBox";
 import WatchBoxList from "./component/WatchBoxList";
+import Box from "./component/Box";
 
 const tempMovieData = [
   {
@@ -53,29 +54,31 @@ const tempWatchedData = [
 ];
 
 export default function App() {
+  const [movies, setMovies] = useState(tempMovieData);
   return (
     <>
-      <NavBar />
-      <Main />
+      <NavBar>
+        <SearcBar />
+        <NumResult movies={movies} />
+      </NavBar>
+      <Main>
+        <ListBox tempMovieData={tempMovieData} />
+
+        <WatchBoxList tempWatchedData={tempWatchedData} />
+      </Main>
     </>
   );
 }
 
-function Main() {
-  return (
-    <main className="main">
-      <ListBox tempMovieData={tempMovieData} />
-      <WatchBoxList tempWatchedData={tempWatchedData} />
-    </main>
-  );
+function Main({ children }) {
+  return <main className="main">{children}</main>;
 }
 
-function NavBar() {
+function NavBar({ children }) {
   return (
     <nav className="nav-bar">
       <Logo />
-      <SearcBar tempWatchedData={tempWatchedData} />
-      <NumResult tempMovieData={tempMovieData} />
+      {children}
     </nav>
   );
 }

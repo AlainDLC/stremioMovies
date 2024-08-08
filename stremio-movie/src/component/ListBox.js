@@ -1,25 +1,17 @@
 import { useState } from "react";
+import Box from "./Box";
 
 export default function ListBox({ tempMovieData }) {
-  const [isOpen1, setIsOpen1] = useState(true);
   const [movies, setMovies] = useState(tempMovieData);
 
   return (
-    <div className="box">
-      <button
-        className="btn-toggle"
-        onClick={() => setIsOpen1((open) => !open)}
-      >
-        {isOpen1 ? "🔼" : "🔽"}
-      </button>
-      {isOpen1 && (
-        <ul className="list">
-          {movies?.map((movie) => (
-            <MovieList movie={movie} key={movie.imdbID} />
-          ))}
-        </ul>
-      )}
-    </div>
+    <Box>
+      <ul className="list">
+        {movies?.map((movie) => (
+          <MovieList movie={movie} key={movie.imdbID} />
+        ))}
+      </ul>
+    </Box>
   );
 }
 
@@ -30,7 +22,7 @@ function MovieList({ movie }) {
       <h3>{movie.Title}</h3>
       <div>
         <p>
-          <span>🗓</span>
+          <span>🎬</span>
           <span>{movie.Year}</span>
         </p>
       </div>
