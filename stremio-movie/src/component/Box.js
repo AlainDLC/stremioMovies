@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StarRating from "./StarrRating";
+import StarRating from "./StarRating";
 
 export default function Box({ children }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -16,7 +16,12 @@ export default function Box({ children }) {
         {isOpen && children}
       </div>
       <div className="box">
-        <StarRating maxRating={4} />
+        <StarRating
+          color="green"
+          maxRating={3}
+          messages={["Nice", "Goo", "Bästa"]}
+          size={40}
+        />
       </div>
     </>
   );

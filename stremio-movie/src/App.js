@@ -4,7 +4,7 @@ import SearcBar from "./component/SearchBar";
 import NumResult from "./component/NumResult";
 import ListBox from "./component/ListBox";
 import WatchBoxList from "./component/WatchBoxList";
-import StarRating from "./component/StarrRating";
+import StarRating from "./component/StarRating";
 
 const tempMovieData = [
   {
