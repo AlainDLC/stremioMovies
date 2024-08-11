@@ -1,8 +1,8 @@
 import Summary from "./Summary";
 import Box from "./Box";
 
-export default function WatchBoxList({ tempWatchedData }) {
-  const watched = tempWatchedData;
+export default function WatchBoxList({ movieData }) {
+  const watched = movieData;
 
   return (
     <Box>

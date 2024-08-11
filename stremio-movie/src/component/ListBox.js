@@ -1,20 +1,28 @@
-import { useState } from "react";
 import Box from "./Box";
-import StarRating from "./StarrRating";
+import { ErrorMessage } from "../Appv1";
+import { Loader } from "../Appv1";
 
-export default function ListBox({ tempMovieData }) {
-  const [movies, setMovies] = useState(tempMovieData);
+export default function ListBox({ movieData,isLoading,error }) {
 
   return (
     <Box>
-      <ul className="list">
-        {movies?.map((movie) => (
-          <MovieList movie={movie} key={movie.imdbID} />
-        ))}
-      </ul>
+      {isLoading && !error ? (
+        <Loader />
+      ) : error ? (
+        <ErrorMessage message={error} />
+      ) : (
+        <ul className="list">
+          {movieData?.map((movie) => (
+            <MovieList movie={movie} key={movie.imdbID} />
+          ))}
+        </ul>
+      )}
     </Box>
   );
+
 }
+
+
 
 function MovieList({ movie }) {
   return (

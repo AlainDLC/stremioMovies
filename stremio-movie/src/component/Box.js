@@ -15,9 +15,7 @@ export default function Box({ children }) {
         </button>
         {isOpen && children}
       </div>
-      <div className="box">
-        <StarRating maxRating={4} />
-      </div>
+      
     </>
   );
 }
