@@ -1,6 +1,6 @@
 import { useState } from "react";
-export default function SearcBar() {
-  const [query, setQuery] = useState("");
+
+export default function SearchBar({ query, setQuery }) {
   return (
     <input
       className="search"

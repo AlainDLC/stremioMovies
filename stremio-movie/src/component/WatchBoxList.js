@@ -1,13 +1,13 @@
 import Summary from "./Summary";
 import Box from "./Box";
 
-export default function WatchBoxList({ tempWatchedData }) {
-  const watched = tempWatchedData;
+export default function WatchBoxList({ movieData }) {
+  const watched = movieData;
 
   return (
     <Box>
       <Summary watched={watched} />
-      <ul className="list">
+      <ul className="list list-movies">
         {watched.map((movie) => (
           <WatchList movie={movie} key={movie.imdbID} />
         ))}

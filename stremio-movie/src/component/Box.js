@@ -15,14 +15,6 @@ export default function Box({ children }) {
         </button>
         {isOpen && children}
       </div>
-      <div className="box">
-        <StarRating
-          color="green"
-          maxRating={3}
-          messages={["Nice", "Goo", "Bästa"]}
-          size={40}
-        />
-      </div>
     </>
   );
 }
