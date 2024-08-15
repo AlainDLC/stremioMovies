@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import Appv1 from "./Appv1";
+
+import Appv2 from "./Appv2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
- <Appv1/>
+    <Appv2 />
   </React.StrictMode>
 );
